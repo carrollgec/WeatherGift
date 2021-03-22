@@ -24,21 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p80-jQ-lhD">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="keO-YD-nMA"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="About" id="YaQ-fQ-btS"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Hkw-US-XRc"/>
-                                    <barButtonItem image="list.bullet" catalog="system" id="GlH-ep-eEM">
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="o1S-Lb-xaU"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-aT-zZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                 <subviews>
@@ -81,6 +66,33 @@
                                     <constraint firstAttribute="height" constant="225" id="qc3-Fp-4mV"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p80-jQ-lhD">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="keO-YD-nMA"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="About" id="YaQ-fQ-btS"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KrX-OX-aOM"/>
+                                    <barButtonItem style="plain" id="8hl-xq-K6o">
+                                        <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="lyK-mn-rLd">
+                                            <rect key="frame" x="83" y="8" width="209" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="pageIndicatorTintColor" systemColor="systemTealColor"/>
+                                            <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="pageControlTapped:" destination="SzW-4e-yHL" eventType="valueChanged" id="22p-75-6gu"/>
+                                            </connections>
+                                        </pageControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Hkw-US-XRc"/>
+                                    <barButtonItem image="list.bullet" catalog="system" id="GlH-ep-eEM">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="o1S-Lb-xaU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98l-up-8XH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,6 +108,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="4vI-1d-tG2" id="p7M-BV-uiG"/>
                         <outlet property="imageView" destination="O03-yD-Z7J" id="lIm-hN-37z"/>
+                        <outlet property="pageControl" destination="lyK-mn-rLd" id="XWY-Vs-blN"/>
                         <outlet property="placeLabel" destination="XNA-FE-VUq" id="1Uv-gh-rJI"/>
                         <outlet property="summaryLabel" destination="uBV-jG-iNH" id="q1g-pL-aBh"/>
                         <outlet property="temperatureLabel" destination="DwN-xq-fOu" id="PwQ-bC-MSV"/>
