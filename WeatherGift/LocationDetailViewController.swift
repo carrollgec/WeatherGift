@@ -155,7 +155,7 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
         case .restricted:
             self.oneButtonAlert(title: "Location Services Denied", message: "It may be that parental controls are restricting location use in this app.")
         case .denied:
-            showAlertToPrivacySettings(title: "User has not authorized location settings.", message: "Select 'Settings' below to enable device settings and enable location services for this app. ")
+            showAlertToPrivacySettings(title: "User has not authorized location settings.", message: "Select 'Settings' below to enable device settings and enable location  services for this app. ")
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.requestLocation()
         @unknown default:
