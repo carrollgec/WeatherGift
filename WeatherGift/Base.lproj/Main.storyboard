@@ -93,16 +93,75 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YNj-cm-xAm">
+                                <rect key="frame" x="0.0" y="225" width="375" height="398"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="8lo-7R-g93" customClass="DailyTableViewCell" customModule="WeatherGift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8lo-7R-g93" id="1jt-Fk-2Zh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiD-r2-f05">
+                                                    <rect key="frame" x="9" y="5" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloomsday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMp-bH-pHa">
+                                                    <rect key="frame" x="87" y="5" width="217" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="188°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bw5-WM-V8d">
+                                                    <rect key="frame" x="316" y="5" width="50" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Rain Rain" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsV-md-5sl">
+                                                    <rect key="frame" x="87" y="36" width="217" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-88°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-aR-Xyv">
+                                                    <rect key="frame" x="332" y="38" width="34" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dailyHighLabel" destination="bw5-WM-V8d" id="D29-jl-slb"/>
+                                            <outlet property="dailyImageView" destination="IiD-r2-f05" id="H6W-Xf-ERI"/>
+                                            <outlet property="dailyLowLabel" destination="gw5-aR-Xyv" id="j24-Mo-ugI"/>
+                                            <outlet property="dailySummaryView" destination="WsV-md-5sl" id="VRQ-uj-bdE"/>
+                                            <outlet property="dailyWeekdayLabel" destination="wMp-bH-pHa" id="wPS-u1-l38"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98l-up-8XH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ja6-aT-zZ4" firstAttribute="leading" secondItem="98l-up-8XH" secondAttribute="leading" id="6Hq-vX-gnl"/>
+                            <constraint firstItem="YNj-cm-xAm" firstAttribute="leading" secondItem="98l-up-8XH" secondAttribute="leading" id="Bwq-HC-trN"/>
+                            <constraint firstItem="98l-up-8XH" firstAttribute="trailing" secondItem="YNj-cm-xAm" secondAttribute="trailing" id="BzC-8S-qd8"/>
                             <constraint firstItem="Ja6-aT-zZ4" firstAttribute="top" secondItem="98l-up-8XH" secondAttribute="top" id="Nfl-Yy-V9H"/>
                             <constraint firstItem="98l-up-8XH" firstAttribute="trailing" secondItem="Ja6-aT-zZ4" secondAttribute="trailing" id="Umd-Bc-iqG"/>
                             <constraint firstItem="p80-jQ-lhD" firstAttribute="bottom" secondItem="98l-up-8XH" secondAttribute="bottom" id="WDH-72-9hl"/>
+                            <constraint firstItem="p80-jQ-lhD" firstAttribute="top" secondItem="YNj-cm-xAm" secondAttribute="bottom" id="WgN-mZ-UE0"/>
                             <constraint firstItem="p80-jQ-lhD" firstAttribute="leading" secondItem="98l-up-8XH" secondAttribute="leading" id="Yfg-T4-tKH"/>
                             <constraint firstItem="p80-jQ-lhD" firstAttribute="trailing" secondItem="98l-up-8XH" secondAttribute="trailing" id="fnI-wD-mtR"/>
+                            <constraint firstItem="YNj-cm-xAm" firstAttribute="top" secondItem="Ja6-aT-zZ4" secondAttribute="bottom" id="vwc-lN-TVF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -111,6 +170,7 @@
                         <outlet property="pageControl" destination="lyK-mn-rLd" id="XWY-Vs-blN"/>
                         <outlet property="placeLabel" destination="XNA-FE-VUq" id="1Uv-gh-rJI"/>
                         <outlet property="summaryLabel" destination="uBV-jG-iNH" id="q1g-pL-aBh"/>
+                        <outlet property="tableView" destination="YNj-cm-xAm" id="wel-Xb-bpN"/>
                         <outlet property="temperatureLabel" destination="DwN-xq-fOu" id="PwQ-bC-MSV"/>
                     </connections>
                 </viewController>
@@ -205,6 +265,9 @@
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
