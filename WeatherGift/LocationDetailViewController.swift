@@ -29,7 +29,11 @@ class LocationDetailViewController: UIViewController {
     var locationIndex = 0
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         clearUserInterface()
         
         tableView.delegate = self
