@@ -73,7 +73,11 @@
                                     <constraint firstAttribute="height" constant="44" id="keO-YD-nMA"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="About" id="YaQ-fQ-btS"/>
+                                    <barButtonItem title="About" id="YaQ-fQ-btS">
+                                        <connections>
+                                            <segue destination="Dd7-LS-hJi" kind="presentation" id="GCP-Eb-wqI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KrX-OX-aOM"/>
                                     <barButtonItem style="plain" id="8hl-xq-K6o">
                                         <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="lyK-mn-rLd">
@@ -89,7 +93,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Hkw-US-XRc"/>
                                     <barButtonItem image="list.bullet" catalog="system" id="GlH-ep-eEM">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="o1S-Lb-xaU"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowList" modalPresentationStyle="fullScreen" id="o1S-Lb-xaU"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -233,6 +237,77 @@
             </objects>
             <point key="canvasLocation" x="-970.39999999999998" y="77.811094452773617"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="NB3-nW-H8J">
+            <objects>
+                <viewController id="Dd7-LS-hJi" customClass="AboutViewController" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ksh-Xg-xCY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R8-3t-cpv">
+                                <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Eve-XN-ITa"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Done" id="TMK-6P-2VL">
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="Dd7-LS-hJi" id="PMa-lq-ncN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-Je-G7U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WeatherGift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-MS-Qma">
+                                        <rect key="frame" x="53" y="8" width="268" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="64"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="Liw-2U-dla">
+                                        <rect key="frame" x="8" y="104" width="359" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_google_on_white" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-Af-1id">
+                                        <rect key="frame" x="188" y="422" width="179" height="181"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Made with Love By Grace Carroll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWq-fX-m0p">
+                                        <rect key="frame" x="8" y="393" width="359" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_openweather" translatesAutoresizingMaskIntoConstraints="NO" id="fBH-Ck-SQ2">
+                                        <rect key="frame" x="8" y="422" width="179" height="181"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rmo-pt-moL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5R8-3t-cpv" firstAttribute="leading" secondItem="rmo-pt-moL" secondAttribute="leading" id="1ba-K7-jcP"/>
+                            <constraint firstItem="rmo-pt-moL" firstAttribute="bottom" secondItem="5R8-3t-cpv" secondAttribute="bottom" id="7bS-CS-gNM"/>
+                            <constraint firstItem="VzB-Je-G7U" firstAttribute="leading" secondItem="rmo-pt-moL" secondAttribute="leading" id="87Q-77-AhV"/>
+                            <constraint firstItem="VzB-Je-G7U" firstAttribute="top" secondItem="rmo-pt-moL" secondAttribute="top" id="V0W-el-muz"/>
+                            <constraint firstItem="rmo-pt-moL" firstAttribute="trailing" secondItem="VzB-Je-G7U" secondAttribute="trailing" id="bST-um-8dE"/>
+                            <constraint firstAttribute="trailing" secondItem="5R8-3t-cpv" secondAttribute="trailing" id="quh-2g-7x9"/>
+                            <constraint firstItem="5R8-3t-cpv" firstAttribute="top" secondItem="VzB-Je-G7U" secondAttribute="bottom" id="ub5-lF-Gun"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPH-Eh-gPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-988" y="826"/>
+        </scene>
         <!--Location List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -312,8 +387,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clear-day" width="3264" height="2448"/>
         <image name="cloud" catalog="system" width="128" height="87"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="powered_by_google_on_white" width="144" height="18"/>
+        <image name="powered_by_openweather" width="468" height="228"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
